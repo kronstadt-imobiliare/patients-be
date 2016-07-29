@@ -1,3 +1,7 @@
+CREATE DATABASE `patients` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `patients`;
+
 CREATE TABLE `insurance` (
   `HealthInsuranceID` int(11) DEFAULT NULL,
   `HealthInsuranceType` text,
@@ -92,3 +96,5 @@ CREATE TABLE `zip` (
   `Deleted` int(11) DEFAULT NULL,
   PRIMARY KEY (`ZIPID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+UPDATE patients.insurance set zipid = null where zipid = 0;
