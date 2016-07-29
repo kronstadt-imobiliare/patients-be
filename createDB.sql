@@ -23,10 +23,9 @@ CREATE TABLE `insurance` (
   `Deleted` int(11) DEFAULT NULL,
   `ZIPID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 CREATE TABLE `patient` (
   `PatientID` int(11) DEFAULT NULL,
-  `InternalNumber` int(11) DEFAULT NULL,
+  `InternalNumber` int(11) NOT NULL AUTO_INCREMENT,
   `PatientType` text,
   `Sex` text,
   `PoliteAddress` text,
@@ -80,9 +79,9 @@ CREATE TABLE `patient` (
   `Deleted` int(11) DEFAULT NULL,
   `ExtPatientID` text,
   `IBAN` text,
-  `BIC` text
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
+  `BIC` text,
+  PRIMARY KEY (`InternalNumber`)
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=latin1;
 CREATE TABLE `zip` (
   `ZIPID` int(11) NOT NULL,
   `ZIP` text,
@@ -93,6 +92,3 @@ CREATE TABLE `zip` (
   `Deleted` int(11) DEFAULT NULL,
   PRIMARY KEY (`ZIPID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
-
